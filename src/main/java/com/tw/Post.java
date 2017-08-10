@@ -15,7 +15,11 @@ public class Post {
     private String title;
 
     @OneToMany(cascade = CascadeType.ALL, orphanRemoval = true)
+    @JoinColumn(name = "post_id")
     private List<PostComment> comments = new ArrayList<>();
+
+    public Post() {
+    }
 
     Post(String title) {
         this.title = title;

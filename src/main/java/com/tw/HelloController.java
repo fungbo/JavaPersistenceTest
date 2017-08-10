@@ -11,9 +11,15 @@ public class HelloController {
     private HelloService helloService;
 
 
-    @GetMapping("/hello")
+    @GetMapping("/add")
     public String hello() {
         helloService.doAllThings();
-        return "hello";
+        return "add";
+    }
+
+    @GetMapping("/remove")
+    public String remove() {
+        helloService.remove();
+        return "remove";
     }
 }

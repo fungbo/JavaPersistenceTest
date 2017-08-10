@@ -16,4 +16,8 @@ class HelloService {
         post.add(new PostComment("Third review"));
         postRepository.save(post);
     }
+
+    void remove() {
+        postRepository.delete(1L);
+    }
 }

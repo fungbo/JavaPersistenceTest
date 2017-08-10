@@ -15,6 +15,9 @@ class PostComment {
 
     private String review;
 
+    public PostComment() {
+    }
+
     public PostComment(String review) {
         this.review = review;
     }
