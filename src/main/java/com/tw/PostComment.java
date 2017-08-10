@@ -12,8 +12,7 @@ class PostComment {
 
     private String review;
 
-    @ManyToOne(fetch = FetchType.LAZY)
-    @JoinColumn(name = "post_id")
+    @ManyToOne(fetch = FetchType.LAZY, cascade = CascadeType.ALL)
     private Post post;
 
     public PostComment() {

@@ -9,12 +9,23 @@ class HelloService {
     @Autowired
     private PostRepository postRepository;
 
+    @Autowired
+    private PostCommentRepository postCommentRepository;
+
     void doAllThings() {
         Post post = new Post("First post");
-        post.add(new PostComment("First review"));
-        post.add(new PostComment("Second review"));
-        post.add(new PostComment("Third review"));
-        postRepository.save(post);
+        PostComment pc1 = new PostComment("First pc");
+        pc1.setPost(post);
+
+        PostComment pc2 = new PostComment("Second pc");
+        pc2.setPost(post);
+
+        PostComment pc3 = new PostComment("Three pc");
+        pc3.setPost(post);
+
+        postCommentRepository.save(pc1);
+        postCommentRepository.save(pc2);
+        postCommentRepository.save(pc3);
     }
 
     void remove() {
