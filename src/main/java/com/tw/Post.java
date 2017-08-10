@@ -14,8 +14,7 @@ public class Post {
 
     private String title;
 
-    @OneToMany(cascade = CascadeType.ALL, orphanRemoval = true)
-    @JoinColumn(name = "post_id")
+    @OneToMany(mappedBy = "post", cascade = CascadeType.ALL, orphanRemoval = true)
     private List<PostComment> comments = new ArrayList<>();
 
     public Post() {
@@ -27,5 +26,6 @@ public class Post {
 
     void add(PostComment postComment) {
         comments.add(postComment);
+        postComment.setPost(this);
     }
 }

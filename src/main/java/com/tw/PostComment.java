@@ -1,9 +1,6 @@
 package com.tw;
 
-import javax.persistence.Entity;
-import javax.persistence.GeneratedValue;
-import javax.persistence.Id;
-import javax.persistence.Table;
+import javax.persistence.*;
 
 @Entity(name = "PostComment")
 @Table(name = "post_comment")
@@ -15,10 +12,18 @@ class PostComment {
 
     private String review;
 
+    @ManyToOne(fetch = FetchType.LAZY)
+    @JoinColumn(name = "post_id")
+    private Post post;
+
     public PostComment() {
     }
 
     public PostComment(String review) {
         this.review = review;
+    }
+
+    public void setPost(Post post) {
+        this.post = post;
     }
 }
