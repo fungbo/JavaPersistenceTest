@@ -40,5 +40,7 @@ dependencies {
 
     compile group: 'org.flywaydb', name: 'flyway-core', version: '4.2.0'
 
+    compile('org.projectlombok:lombok:1.16.14')
+
     testCompile("junit:junit")
 }
