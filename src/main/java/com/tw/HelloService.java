@@ -19,7 +19,6 @@ class HelloService {
         post.addComment(pc3);
 
         postRepository.save(post);
-
     }
 
     void remove() {

@@ -42,5 +42,7 @@ dependencies {
 
     compile('org.projectlombok:lombok:1.16.14')
 
+    compile "mysql:mysql-connector-java:6.0.6"
+
     testCompile("junit:junit")
 }
